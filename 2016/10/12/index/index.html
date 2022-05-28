@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ES6中Decorators修饰器 - 影月博客</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Shadowmon,"> 
+    <meta name="description" content="前端博客,Decorators修饰器
+修饰器是一个函数，通过修饰器能修改类的行为，也可理解为扩展类的功能，在类这个范围内有效。
+
+插件
+使用修饰器还需要安装一个插件 import babel-plugin-t,"> 
+    <meta name="author" content="shadowmon"> 
+    <link rel="alternative" href="atom.xml" title="影月博客" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="ES6中Decorators修饰器 - 影月博客"/>
+    <meta name="twitter:description" content="前端博客,Decorators修饰器
+修饰器是一个函数，通过修饰器能修改类的行为，也可理解为扩展类的功能，在类这个范围内有效。
+
+插件
+使用修饰器还需要安装一个插件 import babel-plugin-t,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="影月博客"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="ES6中Decorators修饰器 - 影月博客"/>
+    <meta property="og:description" content="前端博客,Decorators修饰器
+修饰器是一个函数，通过修饰器能修改类的行为，也可理解为扩展类的功能，在类这个范围内有效。
+
+插件
+使用修饰器还需要安装一个插件 import babel-plugin-t,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+<meta name="generator" content="Hexo 6.2.0"><link rel="stylesheet" href="/assets/css/APlayer.min.css" class="aplayer-style-marker">
+<script src="/assets/js/APlayer.min.js" class="aplayer-script-marker"></script>
+<script src="/assets/js/Meting.min.js" class="meting-script-marker"></script>
+</head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">影月博客</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://www.shadowmon.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">ES6中Decorators修饰器</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">ES6中Decorators修饰器</h1>
+        <div class="stuff">
+            <span>十月 12, 2016</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E6%A0%87%E7%AD%BE1/" rel="tag">标签1</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E6%A0%87%E7%AD%BE2/" rel="tag">标签2</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="Decorators修饰器"><a href="#Decorators修饰器" class="headerlink" title="Decorators修饰器"></a>Decorators修饰器</h1><blockquote>
+<p>修饰器是一个函数，通过修饰器能修改类的行为，也可理解为扩展类的功能，在类这个范围内有效。</p>
+</blockquote>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><blockquote>
+<p>使用修饰器还需要安装一个插件 <code>import babel-plugin-transform-decorators-legacy</code>在.babelrc文件中引入如下文件：</p>
+</blockquote>
+<p><code>.babelrc</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;plugins&quot;</span>:[<span class="string">&quot;transform-decorators-legacy&quot;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong><code>注意：</code></strong> ES6中默认开启严格模式，要在ES5中使用需要有这句命令 <code>use strict</code> 强制开启严格模式。</p>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><ul>
+<li><strong>案例一：限制某个属性为只读</strong></li>
+</ul>
+<blockquote>
+<p>修饰器的第三方js库:core-decorators; npm install core-decorators，import引入后，直接在项目中写@readonly就可以了，不用向下面在定义readonly</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="keyword">let</span> readonly = <span class="keyword">function</span>(<span class="params">target,name,descriptor</span>)&#123;</span><br><span class="line">    descriptor.<span class="property">writable</span> = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> descriptor;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">class</span> <span class="title class_">Test</span>&#123;</span><br><span class="line">    @readonly</span><br><span class="line">    <span class="title function_">time</span>(<span class="params"></span>)&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&#x27;2017-06-14&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> t1 = <span class="keyword">new</span> <span class="title class_">Test</span>();</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(t1.<span class="title function_">time</span>()); <span class="comment">//2017-06-14</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> t2 = <span class="keyword">new</span> <span class="title class_">Test</span>();</span><br><span class="line"></span><br><span class="line">  <span class="comment">//此时 time为只读 再次设置将会报下面错误</span></span><br><span class="line">  t2.<span class="property">time</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;reset time&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(t2.<span class="title function_">time</span>());</span><br><span class="line">  <span class="comment">//Uncaught TypeError: Cannot assign to read only property &#x27;time&#x27; of object &#x27;#&lt;Test&gt;&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>案例一：点击统计</strong></li>
+</ul>
+<blockquote>
+<p>日志系统，比如广告，我们会为其做展示、点击统计</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="comment">//先写一个修饰器，type表示的是show 还是 click</span></span><br><span class="line">  <span class="keyword">let</span> <span class="title function_">log</span> = (<span class="params">type</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">function</span>(<span class="params">target,name,descriptor</span>)&#123;</span><br><span class="line">      <span class="comment">//保存一下原始的函数体</span></span><br><span class="line">      <span class="keyword">let</span> src_method = descriptor.<span class="property">value</span>;</span><br><span class="line">      <span class="comment">//重新进行赋值</span></span><br><span class="line">      descriptor.<span class="property">value</span> = <span class="function">(<span class="params">...arg</span>) =&gt;</span> &#123;</span><br><span class="line">        src_method.<span class="title function_">apply</span>(target,arg);</span><br><span class="line">        <span class="comment">//如果将来发送买点接口变了，只需要改log对应的这个方法就可以了</span></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">info</span>(<span class="string">`log <span class="subst">$&#123;type&#125;</span> `</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">class</span> <span class="title class_">AD</span>&#123;</span><br><span class="line">    @<span class="title function_">log</span>(<span class="string">&#x27;show&#x27;</span>)</span><br><span class="line">    <span class="title function_">show</span>(<span class="params"></span>)&#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">info</span>(<span class="string">&#x27;ad is show&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @<span class="title function_">log</span>(<span class="string">&#x27;click&#x27;</span>)</span><br><span class="line">    <span class="title function_">click</span>(<span class="params"></span>)&#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">info</span>(<span class="string">&#x27;ad is click&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> ad = <span class="keyword">new</span> <span class="title function_">AD</span>();</span><br><span class="line"></span><br><span class="line">  ad.<span class="title function_">show</span>();</span><br><span class="line">  ad.<span class="title function_">click</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="http://www.shadowmon.com/awesome.mp3">
+            </audio>
+            
+        </div>
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script></body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/click-love.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+  
+  
+
+      
+
+  
+  
+  <div id="aplayer-hjnObCgk" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="5415564598"
+       data-server="netease" data-type="playlist" data-loop="none"
+       data-order="random" data-lrctype="0" data-listfolded="true" 
+       data-fixed="true" data-autoplay="true" 
+       data-volume="0.4" data-mutex="true" 
+       data-listmaxheight="400px" data-preload="none" 
+       data-theme="">
+  </div>
+  
+
+
+
+
+
+</html>
