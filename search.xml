@@ -3,7 +3,7 @@
   <entry>
     <title>ES6中Decorators修饰器</title>
     <url>/2016/10/12/index/</url>
-    <content><![CDATA[<h1 id="Decorators修饰器"><a href="#Decorators修饰器" class="headerlink" title="Decorators修饰器"></a>Decorators修饰器</h1><blockquote>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h1 id="Decorators修饰器"><a href="#Decorators修饰器" class="headerlink" title="Decorators修饰器"></a>Decorators修饰器</h1><blockquote>
 <p>修饰器是一个函数，通过修饰器能修改类的行为，也可理解为扩展类的功能，在类这个范围内有效。</p>
 </blockquote>
 <h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><blockquote>
@@ -40,7 +40,7 @@
   <entry>
     <title>ES6中Promise的使用</title>
     <url>/2022/05/27/Promise/</url>
-    <content><![CDATA[<h1 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h1><p>在 JavaScript 的世界中，所有代码都是单线程执行的。为了使程序不阻塞执行有了异步（I&#x2F;O操作、事件操作），但是异步也有其不好之处，例如：异步回调callback 回调地狱的问题，伴随着这些问题有了解决方案 Promise。</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h1 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h1><p>在 JavaScript 的世界中，所有代码都是单线程执行的。为了使程序不阻塞执行有了异步（I&#x2F;O操作、事件操作），但是异步也有其不好之处，例如：异步回调callback 回调地狱的问题，伴随着这些问题有了解决方案 Promise。</p>
 <h2 id="Callback-方式书写"><a href="#Callback-方式书写" class="headerlink" title="Callback 方式书写"></a>Callback 方式书写</h2><p>回调函数方式书写，如果异步请求多了，将会很难维护，程序看着很乱，也很容易导致回调地狱。</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> ajax = <span class="keyword">function</span>(<span class="params">callback</span>)&#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;执行&#x27;</span>);</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    callback &amp;&amp; <span class="title function_">callback</span>()</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">ajax</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;执行 ajax方法&#x27;</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
